@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.RadioGroup;
 
 import com.example.xrs_fang.testdemo.adaper.MainCententPageAdaper;
+import com.example.xrs_fang.testdemo.utils.Constans;
 
 public class MainActivity extends FragmentActivity implements RadioGroup.OnCheckedChangeListener {
 
@@ -50,16 +51,22 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
     //option+enter 创建方法
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        //处理底部item
+        //处理底部item处理点击
+        int index = Constans.PAGE_MAIN;
         switch (i) {
             case R.id.fistitem:
+                 index = Constans.PAGE_MAIN;
             break;
             case R.id.towitem:
+                index = Constans.PAGE_MYLISTER;
             break;
             case R.id.fouritem:
+                index = Constans.PAGE_THREE;
             break;
             case R.id.fiveitem:
+                index = Constans.PAGE_FOUR;
             break;
         }
+        viewPager.setCurrentItem(index,false);
     }
 }
